@@ -1,0 +1,79 @@
+# REQUÊTE 1: Compter les monuments par type
+PREFIX schema: <http://schema.org/>
+
+SELECT ?type (COUNT(?monument) as ?count)
+WHERE {
+  ?monument a schema:Place ;
+            schema:category ?type .
+}
+GROUP BY ?type
+ORDER BY DESC(?count)
+LIMIT 15
+
+# REQUÊTE 2: Monuments par région (top 10)
+PREFIX schema: <http://schema.org/>
+
+SELECT ?region (COUNT(?monument) as ?count)
+WHERE {
+  ?monument a schema:Place ;
+            schema:addressRegion ?region .
+}
+GROUP BY ?region
+ORDER BY DESC(?count)
+LIMIT 10
+
+# REQUÊTE 3: Monuments nommés en Bretagne avec coordonnées GPS
+PREFIX schema: <http://schema.org/>
+PREFIX wgs84: <http://www.w3.org/2003/01/geo/wgs84_pos#>
+
+SELECT ?name ?city ?lat ?long
+WHERE {
+  ?monument schema:name ?name ;
+            schema:addressLocality ?city ;
+            schema:addressRegion "Bretagne" ;
+            wgs84:lat ?lat ;
+            wgs84:long ?long .
+}
+LIMIT 30
+
+# REQUÊTE 4: Monuments de type "castle" avec localisation
+PREFIX schema: <http://schema.org/>
+
+SELECT ?name ?city ?department ?region
+WHERE {
+  ?monument schema:name ?name ;
+            schema:category schema:castle ;
+            schema:addressLocality ?city ;
+            schema:department ?department ;
+            schema:addressRegion ?region .
+}
+LIMIT 25
+
+# REQUÊTE 5: Monuments dans une zone géographique (bbox Paris)
+PREFIX wgs84: <http://www.w3.org/2003/01/geo/wgs84_pos#>
+PREFIX schema: <http://schema.org/>
+
+SELECT ?monument ?name ?lat ?long
+WHERE {
+  ?monument wgs84:lat ?lat ;
+            wgs84:long ?long .
+  OPTIONAL { ?monument schema:name ?name }
+  
+  FILTER(?lat > 48.8 && ?lat < 48.9)
+  FILTER(?long > 2.2 && ?long < 2.4)
+}
+LIMIT 50
+
+# REQUÊTE 6: Tous les châteaux et mémoriaux
+PREFIX schema: <http://schema.org/>
+
+SELECT ?type ?name ?city ?region
+WHERE {
+  ?monument schema:category ?type ;
+            schema:addressLocality ?city ;
+            schema:addressRegion ?region .
+  OPTIONAL { ?monument schema:name ?name }
+  
+  FILTER(?type = schema:castle || ?type = schema:memorial)
+}
+LIMIT 40
