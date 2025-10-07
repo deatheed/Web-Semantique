@@ -17,6 +17,6 @@ Comment l'utiliser  :
   lien : https://jena.apache.org/download/
   revoir TP1 pour utilisation
 7. Accédez à http://localhost:3030
-8. creer un DataSet monument et importez en fichier le fichier turtle
+8. creer un DataSet monument et importez y le fichier turtle
 9. attendez...
 10. faites des requetes SPARQL dessus
