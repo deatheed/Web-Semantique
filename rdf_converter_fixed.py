@@ -215,4 +215,5 @@ if __name__ == "__main__":
     print("   2. Accédez à http://localhost:3030")
     print("   3. Créez un dataset 'monuments'")
     print("   4. Uploadez monuments_historiques.ttl")
+
     print("   5. Testez les requêtes ci-dessus!")
