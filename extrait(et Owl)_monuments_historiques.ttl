@@ -18,7 +18,6 @@ monuments:Graph
     dcterms:created "2025-11-09"^^xsd:date ;
     void:dataDump <https://public.opendatasoft.com/explore/assets/osm-france-historic/> ;
     void:vocabulary schema1: ;
-    void:vocabulary foaf: ;
     void:vocabulary monuments: ;
     void:vocabulary osm: ;
     void:vocabulary wgs84: ;
@@ -3098,6 +3097,7 @@ monuments:osm_-1273673 a schema1:Place ;
     wgs84:lat 47.2180442059973 ;
     wgs84:long -1.55481849720378 ;
     osm:osmId "-1273673" .
+
 
 
 
