@@ -8,11 +8,6 @@
 @prefix osm:      <https://www.openstreetmap.org/> .
 @prefix monuments:<http://monuments-historiques.fr/resource/> .
 
-<http://monuments-historiques.fr/ontology>
-    a owl:Ontology ;
-    rdfs:label "Ontologie pour notre graphe" .
-
-
 schema1:Place
     a owl:Class ;
     rdfs:label "Place" .
