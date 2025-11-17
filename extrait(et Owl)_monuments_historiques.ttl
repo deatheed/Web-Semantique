@@ -8,6 +8,32 @@
 @prefix osm:      <https://www.openstreetmap.org/> .
 @prefix monuments:<http://monuments-historiques.fr/resource/> .
 
+@prefix void:      http://rdfs.org/ns/void .
+@prefix dcterms:   http://purl.org/dc/terms/ .
+@prefix schema:    http://schema.org/ .
+@prefix foaf:      http://xmlns.com/foaf/0.1/ .
+@prefix monuments: http://monuments-historiques.fr/resource/ .
+@prefix osm:       https://www.openstreetmap.org/ .
+@prefix schema1:   http://schema.org/ .
+@prefix wgs84:     http://www.w3.org/2003/01/geo/wgs84_pos .
+@prefix xsd:       http://www.w3.org/2001/XMLSchema .
+
+<#Monuments>
+    a void:Dataset ;
+
+    dcterms:title "Monument Historiques Français" ;
+    dcterms:description "Dataset décrivant des monuments historiques." ;
+    dcterms:creator "Rodéric Lambert-Huet", "Eliot Belouin" ;
+    dcterms:created "2025-11-09"^^xsd:date ;
+    void:dataDump https://public.opendatasoft.com/explore/assets/osm-france-historic/ ;
+
+    void:vocabulary schema:, foaf:, monuments:, osm:, schema1:, wgs84:, xsd: ;
+
+    void:classes 1 ;
+    void:properties 10 ;
+    void:entities 266039 ;
+    void:triples 2520870 .
+
 <http://monuments-historiques.fr/ontology>
     a owl:Ontology ;
     rdfs:label "Ontologie pour notre graphe" .
@@ -3143,5 +3169,6 @@ monuments:osm_-1273673 a schema1:Place ;
     wgs84:lat 47.2180442059973 ;
     wgs84:long -1.55481849720378 ;
     osm:osmId "-1273673" .
+
 
 
