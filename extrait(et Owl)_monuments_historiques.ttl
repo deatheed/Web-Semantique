@@ -9,6 +9,24 @@
 @prefix monuments:<http://monuments-historiques.fr/resource/> .
 @prefix void:     <http://rdfs.org/ns/void#> .
 
+monuments:Graph
+    a void:Dataset ;
+    dcterms:title "Monument Historiques Français" ;
+    dcterms:description "Dataset décrivant des monuments historiques." ;
+    dcterms:creator "Rodéric Lambert-Huet" ;
+    dcterms:creator "Eliot Belouin" ;
+    dcterms:created "2025-11-09"^^xsd:date ;
+    void:dataDump <https://public.opendatasoft.com/explore/assets/osm-france-historic/> ;
+    void:vocabulary schema1: ;
+    void:vocabulary foaf: ;
+    void:vocabulary monuments: ;
+    void:vocabulary osm: ;
+    void:vocabulary wgs84: ;
+    void:vocabulary xsd: ;
+    void:classes 1^^xsd:integer ;
+    void:properties 10^^xsd:integer ;
+    void:entities 266039^^xsd:integer ;
+    void:triples 2520870^^xsd:integer .
 
 schema1:Place
     a owl:Class ;
@@ -16,56 +34,47 @@ schema1:Place
 
 
 dcterms:modified
-    a owl:DatatypeProperty ;
     rdfs:domain schema1:Place ;
     rdfs:range xsd:date ;
     rdfs:label "Date de modification" .
 
 schema1:addressLocality
-    a owl:DatatypeProperty ;
     rdfs:domain schema1:Place ;
     rdfs:range xsd:string ;
     rdfs:label "Commune" .
 
 schema1:addressRegion
-    a owl:DatatypeProperty ;
     rdfs:domain schema1:Place ;
     rdfs:range xsd:string ;
     rdfs:label "Région" .
 
 schema1:department
-    a owl:DatatypeProperty ;
     rdfs:domain schema1:Place ;
     rdfs:range xsd:string ;
     rdfs:label "Département" .
 
 schema1:name
-    a owl:DatatypeProperty ;
     rdfs:domain schema1:Place ;
     rdfs:range xsd:string ;
     rdfs:label "Nom" .
 
 wgs84:lat
-    a owl:DatatypeProperty ;
     rdfs:domain schema1:Place ;
     rdfs:range xsd:decimal ;
     rdfs:label "Latitude" .
 
 wgs84:long
-    a owl:DatatypeProperty ;
     rdfs:domain schema1:Place ;
     rdfs:range xsd:decimal ;
     rdfs:label "Longitude" .
 
 osm:osmId
-    a owl:DatatypeProperty ;
     rdfs:domain schema1:Place ;
     rdfs:range xsd:string ;
     rdfs:label "Identifiant OSM" .
 
 
 schema1:url
-    a owl:ObjectProperty ;
     rdfs:domain schema1:Place ;
     rdfs:range xsd:anyURI ;
     rdfs:label "URL" .
@@ -3140,6 +3149,7 @@ monuments:osm_-1273673 a schema1:Place ;
     wgs84:lat 47.2180442059973 ;
     wgs84:long -1.55481849720378 ;
     osm:osmId "-1273673" .
+
 
 
 
