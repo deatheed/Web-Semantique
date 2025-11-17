@@ -9,7 +9,7 @@
 @prefix monuments:<http://monuments-historiques.fr/resource/> .
 @prefix void:      http://rdfs.org/ns/void .
 
-<#Monuments>
+monuments:Graph
     a void:Dataset ;
 
     dcterms:title "Monument Historiques Français" ;
@@ -3160,6 +3160,7 @@ monuments:osm_-1273673 a schema1:Place ;
     wgs84:lat 47.2180442059973 ;
     wgs84:long -1.55481849720378 ;
     osm:osmId "-1273673" .
+
 
 
 
