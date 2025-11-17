@@ -28,57 +28,6 @@ monuments:Graph
     void:entities 266039^^xsd:integer ;
     void:triples 2520870^^xsd:integer .
 
-schema1:Place
-    a owl:Class ;
-    rdfs:label "Place" .
-
-
-dcterms:modified
-    rdfs:domain schema1:Place ;
-    rdfs:range xsd:date ;
-    rdfs:label "Date de modification" .
-
-schema1:addressLocality
-    rdfs:domain schema1:Place ;
-    rdfs:range xsd:string ;
-    rdfs:label "Commune" .
-
-schema1:addressRegion
-    rdfs:domain schema1:Place ;
-    rdfs:range xsd:string ;
-    rdfs:label "Région" .
-
-schema1:department
-    rdfs:domain schema1:Place ;
-    rdfs:range xsd:string ;
-    rdfs:label "Département" .
-
-schema1:name
-    rdfs:domain schema1:Place ;
-    rdfs:range xsd:string ;
-    rdfs:label "Nom" .
-
-wgs84:lat
-    rdfs:domain schema1:Place ;
-    rdfs:range xsd:decimal ;
-    rdfs:label "Latitude" .
-
-wgs84:long
-    rdfs:domain schema1:Place ;
-    rdfs:range xsd:decimal ;
-    rdfs:label "Longitude" .
-
-osm:osmId
-    rdfs:domain schema1:Place ;
-    rdfs:range xsd:string ;
-    rdfs:label "Identifiant OSM" .
-
-
-schema1:url
-    rdfs:domain schema1:Place ;
-    rdfs:range xsd:anyURI ;
-    rdfs:label "URL" .
-
 monuments:osm_-1000577 a schema1:Place ;
     dcterms:modified "2017-03-20"^^xsd:date ;
     schema1:addressLocality "Loches" ;
@@ -3149,6 +3098,7 @@ monuments:osm_-1273673 a schema1:Place ;
     wgs84:lat 47.2180442059973 ;
     wgs84:long -1.55481849720378 ;
     osm:osmId "-1273673" .
+
 
 
 
