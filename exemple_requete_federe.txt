@@ -1,0 +1,26 @@
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX dbr: <http://dbpedia.org/resource/> 
+PREFIX m: <http://monuments-historiques.fr/ontology#>
+PREFIX f: <http://example.org/festival>
+PREFIX schema: <http://schema.org/>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+SELECT distinct ?ville ?festival ?monument ?nobel ?tueur
+WHERE {
+  ?a <http://www.w3.org/2000/01/rdf-schema#label> ?festival.
+  ?a schema:location ?ville.
+  SERVICE <http://localhost:3030/monument/sparql> {
+    ?b schema:addressLocality  ?ville.
+    ?b schema:name ?monument
+  }
+  SERVICE <http://localhost:3030/nobel/sparql> {
+    ?c foaf:givenName ?nobel.
+      ?c schema:birthPlace ?bp.
+    ?bp dbo:city ?vn.
+    BIND(STRAFTER(STR(?vn), "http://dbpedia.org/resource/") AS ?ville)
+  }
+  Service  <http://localhost:3030/tueur/sparql> {
+      ?d foaf:name ?tueur.
+  }
+  FILTER(CONTAINS(?tueur, ?nobel))
+}
+LIMIT 2000
