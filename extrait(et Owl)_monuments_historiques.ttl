@@ -11,23 +11,22 @@
 
 monuments:Graph
     a void:Dataset ;
-
     dcterms:title "Monument Historiques Français" ;
     dcterms:description "Dataset décrivant des monuments historiques." ;
-    dcterms:creator "Rodéric Lambert-Huet", "Eliot Belouin" ;
+    dcterms:creator "Rodéric Lambert-Huet" ;
+    dcterms:creator "Eliot Belouin" ;
     dcterms:created "2025-11-09"^^xsd:date ;
-    void:dataDump https://public.opendatasoft.com/explore/assets/osm-france-historic/ ;
-
-    void:vocabulary schema:, foaf:, monuments:, osm:, schema1:, wgs84:, xsd: ;
-
-    void:classes 1 ;
-    void:properties 10 ;
-    void:entities 266039 ;
-    void:triples 2520870 .
-
-<http://monuments-historiques.fr/ontology>
-    a owl:Ontology ;
-    rdfs:label "Ontologie pour notre graphe" .
+    void:dataDump <https://public.opendatasoft.com/explore/assets/osm-france-historic/> ;
+    void:vocabulary schema1: ;
+    void:vocabulary foaf: ;
+    void:vocabulary monuments: ;
+    void:vocabulary osm: ;
+    void:vocabulary wgs84: ;
+    void:vocabulary xsd: ;
+    void:classes 1^^xsd:integer ;
+    void:properties 10^^xsd:integer ;
+    void:entities 266039^^xsd:integer ;
+    void:triples 2520870^^xsd:integer .
 
 
 schema1:Place
@@ -3160,6 +3159,7 @@ monuments:osm_-1273673 a schema1:Place ;
     wgs84:lat 47.2180442059973 ;
     wgs84:long -1.55481849720378 ;
     osm:osmId "-1273673" .
+
 
 
 
