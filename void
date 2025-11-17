@@ -1,0 +1,29 @@
+@prefix rdf:      <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:     <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:      <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:      <http://www.w3.org/2001/XMLSchema#> .
+@prefix schema1:  <http://schema.org/> .
+@prefix dcterms:  <http://purl.org/dc/terms/> .
+@prefix wgs84:    <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix osm:      <https://www.openstreetmap.org/> .
+@prefix monuments:<http://monuments-historiques.fr/resource/> .
+@prefix void:     <http://rdfs.org/ns/void#> .
+@prefix foaf:     <http://xmlns.com/foaf/0.1/> .
+
+monuments:Graph
+    a void:Dataset ;
+    dcterms:title "Monument Historiques Français" ;
+    dcterms:description "Dataset décrivant des monuments historiques." ;
+    dcterms:creator "Rodéric Lambert-Huet" ;
+    dcterms:creator "Eliot Belouin" ;
+    dcterms:created "2025-11-09"^^xsd:date ;
+    void:dataDump <https://public.opendatasoft.com/explore/assets/osm-france-historic/> ;
+    void:vocabulary <http://schema.org/> ;
+    void:vocabulary <http://xmlns.com/foaf/0.1/> ;
+    void:vocabulary <http://monuments-historiques.fr/resource/> ;
+    void:vocabulary <https://www.openstreetmap.org/> ;
+    void:vocabulary <http://www.w3.org/2003/01/geo/wgs84_pos#> ;
+    void:classes 1 ;
+    void:properties 10 ;
+    void:entities 266039 ;
+    void:triples 2520870 .
